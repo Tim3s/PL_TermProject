@@ -16,7 +16,7 @@
     <nav class="blue">
       <div class="nav-wrapper">
         <a href="#" data-target="slide-out" class="sidenav-trigger">
-          <i class="material-icons">Menu</i>
+          <i class="material-icons">menu</i>
         </a>
         <a href="#" class="brand-logo">Dashboard</a>
         <ul class="right hide-on-med-and-down">
@@ -29,7 +29,7 @@
           <li>
             <form>
               <div class="input-field">
-                <input id="search" type="search" style="height: auto" />
+                <input id="search" type="search" style="height: auto" placeholder="Search User" />
                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
               </div>
@@ -101,13 +101,24 @@
         <div class="row">
           <div class="col s12 m6 l4">
             <div class="card medium hoverable">
-              <div class="card-image">
-                <img src="public/background.jpg" />
-                <span class="card-title">Image</span>
-              </div>
-              <div class="card-content">
-                <p>A simple image</p>
-              </div>
+              <a class="modal-trigger" href="#modal1">
+                <div class="card-image">
+                  <img src="public/background.jpg" />
+                  <span class="card-title">Image</span>
+                </div>
+                <div class="card-content">
+                  <p>A simple image</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Modal Header</h4>
+              <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
             </div>
           </div>
         </div>
@@ -126,6 +137,9 @@
 
       const collapsible = document.querySelectorAll(".collapsible");
       const collapsibleInstance = M.Collapsible.init(collapsible);
+
+      const modal = document.querySelectorAll(".modal");
+      const modalInstance = M.Modal.init(modal);
     });
   </script>
 </html>
