@@ -2,7 +2,7 @@
     "tabWidth": 4,
     "overrides": [
         {
-            "files": "*.html",
+            "files": "*.ejs",
             "options": {
                 "tabWidth": 2,
                 "printWidth": 120

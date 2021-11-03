@@ -1,6 +1,7 @@
+// Example
 const chart1 = () => {
     const ctx = document.getElementById("chart1").getContext("2d");
-    const chart1 = new Chart(ctx, {
+    const chartOne = new Chart(ctx, {
         type: "pie",
         data: {
             labels: ["America", "India", "China"],

@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <title>Project</title>
   </head>
 
@@ -47,8 +47,10 @@
     <ul id="slide-out" class="sidenav sidenav-fixed">
       <li>
         <div class="user-view">
-          <div class="background"><img src="public/background.jpg" /></div>
-          <a href="#"><img class="circle" src="public/sample.jpg" /></a>
+          <div class="background">
+            <img src="/background.jpg" />
+          </div>
+          <a href="#"><img class="circle" src="/sample.jpg" /></a>
           <a href="#"><span class="black-text name">John Doe</span></a>
         </div>
       </li>
@@ -102,7 +104,7 @@
           <div class="col s12 m6 l4">
             <div class="card medium hoverable">
               <div class="card-image">
-                <img src="public/background.jpg" />
+                <img src="/background.jpg" />
                 <span class="card-title black-text">Image</span>
               </div>
               <div class="card-content">
@@ -152,7 +154,7 @@
           <div class="col s12 m6">
             <div class="card medium hoverable">
               <div class="card-image">
-                <img src="./public/background.jpg" />
+                <img src="background.jpg" />
                 <span class="card-title">My Blog</span>
               </div>
               <div class="card-content">
@@ -166,8 +168,6 @@
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="js/get-data.js"></script>
-  <script src="js/chart.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const dropdown = document.querySelectorAll(".dropdown-trigger");
@@ -179,7 +179,5 @@
       const collapsible = document.querySelectorAll(".collapsible");
       const collapsibleInstance = M.Collapsible.init(collapsible);
     });
-
-    chart1();
   </script>
 </html>

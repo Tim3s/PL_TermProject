@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Project</title>
+  </head>
+
+  <body>
+    <nav class="orange">
+      <div class="nav-wrapper">
+        <a href="#" data-target="slide-out" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <a href="#" class="brand-logo">Dashboard</a>
+        <ul class="right hide-on-med-and-down">
+          <!-- <li>
+            <a href="#">
+              <i class="material-icons left">search</i>
+              Search User
+            </a>
+          </li> -->
+          <li>
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" style="height: auto" placeholder="Search User" />
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </li>
+          <li>
+            <a href="#">
+              <i class="material-icons left">view_module</i>
+              List Users
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <img src="/background.jpg" />
+          </div>
+          <a href="#"><img class="circle" src="/sample.jpg" /></a>
+          <a href="#"><span class="black-text name">John Doe</span></a>
+          <a href="#"><span class="black-text name">Age: <%= report.age %></span></a>
+          <a href="#"><span class="black-text name">Sex: <%= report.sex %></span></a>
+        </div>
+      </li>
+      <li>
+        <a href="#" class="wave-effect"><i class="material-icons">description</i>Reports</a>
+      </li>
+      <li><div class="divider"></div></li>
+      <li>
+        <a href="#" class="subheader">Menu</a>
+      </li>
+      <!-- <li><a href="#">Learn More</a></li> -->
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordian">
+          <li class="bold">
+            <a href="#" class="collapsible-header">Search User</a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#">By Id</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="bold">
+            <a href="#" class="collapsible-header">List Users</a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#">Total</a></li>
+                <li><a href="#">Monthly</a></li>
+                <li><a href="#">Weekly</a></li>
+                <li><a href="#">Daily</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <main>
+      <!-- <div class="container">
+        <a class="dropdown-trigger btn" href="#" data-target="user-dropdown">Select User</a>
+        <ul id="user-dropdown" class="dropdown-content">
+          <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider" tabindex="-1"></li>
+            <li><a href="#!">three</a></li>
+            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+        </ul>
+      </div> -->
+      <div class="container-main">
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card medium hoverable">
+              <div class="card-image">
+                <img src="/background.jpg" />
+                <span class="card-title black-text">Image</span>
+              </div>
+              <div class="card-content">
+                <p>A simple image</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4">
+            <div class="card medium hoverable">
+              <div class="card-content">
+                <span class="card-title">생활 점수 <%= report.regularity %>점</span>
+                <br />
+                <p>당신은...</p>
+                <br />
+                <p>규칙적인 생활...</p>
+              </div>
+              <div class="card-action">
+                <a href="#">자세히 보기</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l4">
+            <div class="card medium hoverable">
+              <div class="card-content">
+                <span class="card-title">Audience</span>
+                <div class="chart-container">
+                  <canvas id="chart1"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card medium hoverable">
+              <div class="card-content">
+                <span class="card-title">Views</span>
+                <div class="chart-container">
+                  <canvas id="chart2"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6">
+            <div class="card medium hoverable">
+              <div class="card-image">
+                <img src="/background.jpg" />
+                <span class="card-title">My Blog</span>
+              </div>
+              <div class="card-content">
+                <p>It's a simple card</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const dropdown = document.querySelectorAll(".dropdown-trigger");
+      const dropdownInstance = M.Dropdown.init(dropdown);
+
+      const sidenav = document.querySelectorAll(".sidenav");
+      const sidenavInstance = M.Sidenav.init(sidenav);
+
+      const collapsible = document.querySelectorAll(".collapsible");
+      const collapsibleInstance = M.Collapsible.init(collapsible);
+    });
+  </script>
+</html>
