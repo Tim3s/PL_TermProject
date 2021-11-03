@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <nav class="blue">
+    <nav class="orange">
       <div class="nav-wrapper">
         <a href="#" data-target="slide-out" class="sidenav-trigger">
           <i class="material-icons">menu</i>
@@ -97,36 +97,77 @@
             <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
         </ul>
       </div> -->
-      <div class="continaer-main">
+      <div class="container-main">
         <div class="row">
           <div class="col s12 m6 l4">
             <div class="card medium hoverable">
-              <a class="modal-trigger" href="#modal1">
-                <div class="card-image">
-                  <img src="public/background.jpg" />
-                  <span class="card-title">Image</span>
-                </div>
-                <div class="card-content">
-                  <p>A simple image</p>
-                </div>
-              </a>
+              <div class="card-image">
+                <img src="public/background.jpg" />
+                <span class="card-title black-text">Image</span>
+              </div>
+              <div class="card-content">
+                <p>A simple image</p>
+              </div>
             </div>
           </div>
-          <div id="modal1" class="modal">
-            <div class="modal-content">
-              <h4>Modal Header</h4>
-              <p>A bunch of text</p>
+
+          <div class="col s12 m6 l4">
+            <div class="card medium hoverable">
+              <div class="card-content">
+                <span class="card-title">Basic Info</span>
+                <p>Simple card</p>
+                <br />
+                <p>Another simple card</p>
+              </div>
+              <div class="card-action">
+                <a href="#">자세히 보기</a>
+              </div>
             </div>
-            <div class="modal-footer">
-              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+
+          <div class="col s12 m6 l4">
+            <div class="card medium hoverable">
+              <div class="card-content">
+                <span class="card-title">Audience</span>
+                <div class="chart-container">
+                  <canvas id="chart1"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="card medium hoverable">
+              <div class="card-content">
+                <span class="card-title">Views</span>
+                <div class="chart-container">
+                  <canvas id="chart2"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6">
+            <div class="card medium hoverable">
+              <div class="card-image">
+                <img src="./public/background.jpg" />
+                <span class="card-title">My Blog</span>
+              </div>
+              <div class="card-content">
+                <p>It's a simple card</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </main>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="js/get-data.js"></script>
+  <script src="js/chart.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const dropdown = document.querySelectorAll(".dropdown-trigger");
@@ -137,9 +178,8 @@
 
       const collapsible = document.querySelectorAll(".collapsible");
       const collapsibleInstance = M.Collapsible.init(collapsible);
-
-      const modal = document.querySelectorAll(".modal");
-      const modalInstance = M.Modal.init(modal);
     });
+
+    chart1();
   </script>
 </html>
