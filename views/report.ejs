@@ -133,10 +133,11 @@
           <div class="col s12 m6 l4">
             <div class="card medium hoverable">
               <div class="card-content">
-                <span class="card-title">Audience</span>
-                <div class="chart-container">
+                <span class="card-title">선호 활동</span>
+                <!-- <div class="chart-container">
                   <canvas id="chart1"></canvas>
-                </div>
+                </div> -->
+                <p><%= report.cluster %></p>
               </div>
             </div>
           </div>
@@ -146,10 +147,13 @@
           <div class="col s12 m6">
             <div class="card medium hoverable">
               <div class="card-content">
-                <span class="card-title">Views</span>
-                <div class="chart-container">
+                <span class="card-title">활동도</span>
+                <!-- <div class="chart-container">
                   <canvas id="chart2"></canvas>
-                </div>
+                </div> -->
+                <p class="bold">당신의 나이대는 <%= report.ageRange %></p>
+                <p>당신의 활동 점수는 <%= report.activness %></p>
+                <p>당신의 활동 등수는 <%= report.activeRank %></p>
               </div>
             </div>
           </div>
