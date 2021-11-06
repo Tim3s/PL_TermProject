@@ -179,5 +179,9 @@
       const collapsible = document.querySelectorAll(".collapsible");
       const collapsibleInstance = M.Collapsible.init(collapsible);
     });
+
+    if(<%= no_id %> == true){
+      alert('존재하지 않는 유저 id 입니다');
+    }
   </script>
 </html>

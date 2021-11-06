@@ -11,7 +11,7 @@ app.set("views", __dirname + "/views");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("index", {no_id : false});
 });
 
 app.get("/report", (req, res) => {
@@ -23,7 +23,7 @@ app.get("/report", (req, res) => {
             report,
         });
     } else {
-        res.render("index");
+        res.render("index", {no_id : true});
     }
 });
 
