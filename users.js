@@ -28,6 +28,7 @@ const populateData = async () => {
     userValidness = await getData("overall_validness.csv");
     userRegularity = await getData("regularity.csv");
     userResponse = await getData("response.csv");
+    userProgram = await getData("program.csv");
 };
 
 const findUserById = (array, id) => {
@@ -38,6 +39,7 @@ const createReport = (id, age, sex) => {
     const idRegularity = findUserById(userRegularity, id);
     const idActivness = findUserById(userActiveness, id);
     const idCluster = findUserById(userCluster, id);
+    const idProgram = findUserById(userProgram, id);
     const {
         id: clusterId,
         activity: clusterActivity,
@@ -53,7 +55,9 @@ const createReport = (id, age, sex) => {
         idActivness.age,
         idActivness.score,
         idActivness.rank,
-        idActivness.total
+        idActivness.total,
+        idProgram.total,
+        idProgram.recommend
     );
     // console.log(report);
     return report;

@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 
 app.get("/report", (req, res) => {
     const id = req.param("id");
-    //console.log(id);
+    // console.log(id);
     if (users.checkIfExists(id)) {
         const report = users.getReport(id);
         const chartData = users.createChartData(report.clusterRatio);

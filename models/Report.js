@@ -9,7 +9,9 @@ class Report {
         ageRange,
         activness,
         activeRank,
-        activeTotal
+        activeTotal,
+        programTotal,
+        programRecom
     ) {
         this.id = id;
         this.age = age;
@@ -31,6 +33,8 @@ class Report {
         this.activness = Math.ceil(activness);
         this.activeRank = activeRank;
         this.activeTotal = activeTotal;
+        this.programTotal = programTotal;
+        this.programRecom = programRecom;
     }
 }
 
