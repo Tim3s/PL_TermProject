@@ -52,7 +52,8 @@ const createReport = (id, age, sex) => {
         clusterRatio,
         idActivness.age,
         idActivness.score,
-        idActivness.rank
+        idActivness.rank,
+        idActivness.total
     );
     // console.log(report);
     return report;

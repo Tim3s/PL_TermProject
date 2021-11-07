@@ -20,7 +20,7 @@ app.get("/report", (req, res) => {
     if (users.checkIfExists(id)) {
         const report = users.getReport(id);
         const chartData = users.createChartData(report.clusterRatio);
-        //console.log(report.clusterActivity);
+        console.log(report);
         res.render("report", {
             report,
             chartData,
