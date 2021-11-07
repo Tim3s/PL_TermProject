@@ -27,7 +27,7 @@
             </a>
           </li> -->
           <li>
-            <form method = "get" action = "/report">
+            <form method="get" action="/report">
               <div class="input-field">
                 <input id="search" name="id" type="search" style="height: auto" placeholder="Search User" />
                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
@@ -134,10 +134,10 @@
             <div class="card medium hoverable">
               <div class="card-content">
                 <span class="card-title">선호 활동</span>
-                <!-- <div class="chart-container">
+                <div class="chart-container">
                   <canvas id="chart1"></canvas>
-                </div> -->
-                <p><%= report.cluster %></p>
+                </div>
+                <!-- <p><%= report.cluster %></p> -->
               </div>
             </div>
           </div>
@@ -175,7 +175,7 @@
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="/chart.js"></script>
+  <!-- <script src="/chart.js"></script> -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const dropdown = document.querySelectorAll(".dropdown-trigger");
@@ -186,6 +186,25 @@
 
       const collapsible = document.querySelectorAll(".collapsible");
       const collapsibleInstance = M.Collapsible.init(collapsible);
+    });
+
+    const ctx1 = document.getElementById("chart1").getContext("2d");
+    const chart1 = new Chart(ctx1, {
+      type: "pie",
+      data: {
+        labels: <%- JSON.stringify(chartData.keyArray) %>,
+        datasets: [
+          {
+            label: "My first dataset",
+            data: [<%= chartData.valueArray %>],
+            backgroundColor: ["#ffa726", "#f57c00", "#e65100"],
+            hoverOffset: 4,
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+      },
     });
   </script>
 </html>
