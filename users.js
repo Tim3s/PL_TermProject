@@ -37,12 +37,19 @@ const findUserById = (array, id) => {
 const createReport = (id, age, sex) => {
     const idRegularity = findUserById(userRegularity, id);
     const idActivness = findUserById(userActiveness, id);
+    const idCluster = findUserById(userCluster, id);
+    const {
+        id: clusterId,
+        activity: clusterActivity,
+        ...clusterRatio
+    } = idCluster;
     const report = new Report(
         id,
         age,
         sex,
         idRegularity.validness == 1 ? idRegularity.score : null,
-        findUserById(userCluster, id).activity,
+        clusterActivity,
+        clusterRatio,
         idActivness.age,
         idActivness.score,
         idActivness.rank
@@ -71,4 +78,18 @@ const getReport = (id) => {
     return reports.find((report) => report.id == id);
 };
 
-module.exports = { init, checkIfExists, getReport };
+const createChartData = (object) => {
+    const keyArray = [];
+    const valueArray = [];
+    for (const [key, value] of Object.entries(object)) {
+        let refinedValue = (value * 100).toFixed(2);
+        if (refinedValue > 0) {
+            keyArray.push(key);
+            valueArray.push(value);
+        }
+    }
+
+    return { keyArray, valueArray };
+};
+
+module.exports = { init, checkIfExists, getReport, createChartData };
