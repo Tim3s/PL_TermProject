@@ -1,6 +1,6 @@
 const express = require("express");
 const ejs = require("ejs");
-const users = require("./users");
+const users = require("./users.js");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
