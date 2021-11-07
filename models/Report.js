@@ -4,7 +4,8 @@ class Report {
         age,
         sex,
         regularity,
-        cluster,
+        clusterActivity,
+        clusterRatio,
         ageRange,
         activness,
         activeRank
@@ -23,7 +24,8 @@ class Report {
             this.regularity = Math.ceil(regularity);
         }
 
-        this.cluster = cluster;
+        this.clusterActivity = clusterActivity;
+        this.clusterRatio = clusterRatio;
         this.ageRange = ageRange;
         this.activness = Math.ceil(activness);
         this.activeRank = activeRank;

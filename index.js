@@ -11,7 +11,7 @@ app.set("views", __dirname + "/views");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.render("index", {no_id : false});
+    res.render("index", { no_id: false });
 });
 
 app.get("/report", (req, res) => {
@@ -19,11 +19,13 @@ app.get("/report", (req, res) => {
     console.log(id);
     if (users.checkIfExists(id)) {
         const report = users.getReport(id);
+        const chartData = users.createChartData(report.clusterRatio);
         res.render("report", {
             report,
+            chartData,
         });
     } else {
-        res.render("index", {no_id : true});
+        res.render("index", { no_id: true });
     }
 });
 
