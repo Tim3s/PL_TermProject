@@ -11,18 +11,19 @@ app.set("views", __dirname + "/views");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("index", {no_id : false});
 });
 
-app.get("/report/:id", (req, res) => {
-    const id = req.params.id;
+app.get("/report", (req, res) => {
+    const id = req.param("id");
+    console.log(id);
     if (users.checkIfExists(id)) {
         const report = users.getReport(id);
         res.render("report", {
             report,
         });
     } else {
-        res.render("index");
+        res.render("index", {no_id : true});
     }
 });
 

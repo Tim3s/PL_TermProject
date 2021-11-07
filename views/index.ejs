@@ -27,9 +27,9 @@
             </a>
           </li> -->
           <li>
-            <form>
+            <form method = "get" action = "/report">
               <div class="input-field">
-                <input id="search" type="search" style="height: auto" placeholder="Search User" />
+                <input id="search" name="id" type="search" style="height: auto" placeholder="Search User"/>
                 <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
               </div>
@@ -154,7 +154,7 @@
           <div class="col s12 m6">
             <div class="card medium hoverable">
               <div class="card-image">
-                <img src="background.jpg" />
+                <img src="/background.jpg" />
                 <span class="card-title">My Blog</span>
               </div>
               <div class="card-content">
@@ -179,5 +179,9 @@
       const collapsible = document.querySelectorAll(".collapsible");
       const collapsibleInstance = M.Collapsible.init(collapsible);
     });
+
+    if(<%= no_id %> == true){
+      alert('존재하지 않는 유저 id 입니다');
+    }
   </script>
 </html>
