@@ -41,7 +41,7 @@ app.get("/report", (req, res) => {
         });
     } else {
         res.send(
-            "<script>alert('존재하지 않는 사용자입니다!'); document.location.href = '/';</script>"
+            "<script>alert('존재하지 않는 사용자거나 데이터가 부족한 사용자입니다!'); document.location.href = '/';</script>"
         );
     }
 });
