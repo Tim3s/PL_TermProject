@@ -8,7 +8,10 @@ class Report {
         clusterRatio,
         ageRange,
         activness,
-        activeRank
+        activeRank,
+        activeTotal,
+        programTotal,
+        programRecom
     ) {
         this.id = id;
         this.age = age;
@@ -29,6 +32,9 @@ class Report {
         this.ageRange = ageRange;
         this.activness = Math.ceil(activness);
         this.activeRank = activeRank;
+        this.activeTotal = activeTotal;
+        this.programTotal = programTotal;
+        this.programRecom = programRecom;
     }
 }
 
