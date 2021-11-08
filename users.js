@@ -78,8 +78,9 @@ const createReport = (id, age, sex) => {
 const createTotalReport = () => {
     const totalCluster = findUserById(userCluster, 0);
     const { id, activity, ...ratio } = totalCluster;
+    const sumUsers = reports.length;
 
-    return { cluster: ratio };
+    return { sumUsers, cluster: ratio };
 };
 
 const init = async () => {

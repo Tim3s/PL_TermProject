@@ -55,7 +55,7 @@ class Report {
         this.friendScore = Math.ceil(friendScore);
         this.friendRank = friendRank;
         if (Number(friendRank) > 60)
-            this.friendMessage = "조금 더 순이와 대화를 나눠주세요!";
+            this.friendMessage = "순이와 조금 더 대화를 나눠주세요!";
         else
             this.friendMessage =
                 "정말 잘 하고 계세요! 앞으로도 계속 대화를 나눠주세요!";

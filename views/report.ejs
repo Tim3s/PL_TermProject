@@ -47,12 +47,12 @@
               <div class="card-content">
                 <span class="card-title">생활 점수 <%= report.regularity %></span>
                 <br />
-                <p>나이 <%= report.age %>세 <%= report.name %>님!</p>
+                <p>안녕하세요 나이 <%= report.age %>세 <%= report.name %>님!</p>
                 <p><%= report.regularityMessage %></p>
               </div>
-              <div class="card-action">
+              <!-- <div class="card-action">
                 <a href="#">자세히 보기</a>
-              </div>
+              </div> -->
             </div>
           </div>
 
@@ -75,9 +75,9 @@
               <div class="card-content">
                 <span class="card-title">활동도</span>
                 <br />
-                <p class="bold">당신의 나이대는 <%= report.ageRange %>대에 속합니다.</p>
-                <p>당신의 활동 점수는 <%= report.activness %>점 입니다.</p>
-                <p>비슷한 나이대의 <%= report.activeTotal %>명 중 <%= report.activeRank %>등 입니다.</p>
+                <p class="bold"><%= report.name %>님이 속한 나이대는 <%= report.ageRange %>대에요.</p>
+                <p><%= report.name %>님의 활동 점수는 <%= report.activness %>점이에요.</p>
+                <p>비슷한 나이대의 <%= report.activeTotal %>명 중 <%= report.activeRank %>등 하셨어요.</p>
               </div>
             </div>
           </div>
