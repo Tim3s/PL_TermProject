@@ -48,7 +48,8 @@ app.get("/report", (req, res) => {
             sumUsers: totalReport.sumUsers,
             pieChartData,
             barChartData,
-            totalResponse: totalReport.totalResponse
+            totalResponse: totalReport.totalResponse,
+            totalResratio: totalReport.totalResratio
         });
     }
 });
