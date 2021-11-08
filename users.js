@@ -127,6 +127,19 @@ const createBarChartData = (object) => {
     return { keyArray, valueArray };
 };
 
+const createDonutChartData = (id) => {
+    const valueArray = [];
+    const table = findUserById(userResponse, id);
+    const avgAnswer =
+        (Math.ceil(table.percentage1) +
+            Math.ceil(table.percentage2) +
+            Math.ceil(table.percentage3)) /
+        3;
+    valueArray.push(avgAnswer);
+    valueArray.push(100 - avgAnswer);
+    return { valueArray };
+};
+
 module.exports = {
     init,
     checkIfExists,
@@ -134,4 +147,5 @@ module.exports = {
     createTotalReport,
     createPieChartData,
     createBarChartData,
+    createDonutChartData,
 };

@@ -42,11 +42,12 @@
     <main>
       <div class="container-main">
         <div class="row">
-          <div class="col s12 m6 l4">
+          <div class="col s12 m6 l3">
             <div class="card large hoverable">
               <div class="card-content">
                 <span class="card-title">생활 점수 <%= report.regularity %></span>
                 <br />
+                <p>나이 <%= report.age %>세 <%= report.name %>님!</p>
                 <p><%= report.regularityMessage %></p>
               </div>
               <div class="card-action">
@@ -55,19 +56,7 @@
             </div>
           </div>
 
-          <div class="col s12 m6 l4">
-            <div class="card large hoverable">
-              <div class="card-content">
-                <span class="card-title">순이와의 친밀도는 <%= report.friendScore %>점</span>
-                <br />
-                <p>123명의 참가자 중 <%= report.friendRank %>등 이시네요!</p>
-                <br />
-                <p><%= report.friendMessage %></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m6 l4">
+          <div class="col s12 m6 l5">
             <div class="card large hoverable">
               <div class="card-content">
                 <span class="card-title">선호 활동</span>
@@ -80,21 +69,38 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="row">
-          <div class="col s12 m6">
+          <div class="col s12 m6 l4">
             <div class="card large hoverable">
               <div class="card-content">
                 <span class="card-title">활동도</span>
+                <br />
                 <p class="bold">당신의 나이대는 <%= report.ageRange %>대에 속합니다.</p>
                 <p>당신의 활동 점수는 <%= report.activness %>점 입니다.</p>
                 <p>비슷한 나이대의 <%= report.activeTotal %>명 중 <%= report.activeRank %>등 입니다.</p>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="col s12 m6">
+        <div class="row">
+          <div class="col s12 m6 l6">
+            <div class="card large hoverable">
+              <div class="card-content">
+                <span class="card-title">순이와의 친밀도는 <%= report.friendScore %>점</span>
+                <br />
+                <p>123명의 참가자 중 <%= report.friendRank %>등 이시네요!</p>
+                <br />
+                <p><%= report.friendMessage %></p>
+                <br />
+                <div class="chart-container">
+                  <canvas id="chart3"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m6 l6">
             <div class="card large hoverable">
               <div class="card-content">
                 <span class="card-title">프로그램 참여</span>
@@ -109,7 +115,7 @@
             </div>
           </div>
 
-          <div class="col s12 m6">
+          <!-- <div class="col s12 m6">
             <div class="card large hoverable">
               <div class="card-image">
                 <img src="/background.jpg" />
@@ -119,7 +125,7 @@
                 <p>It's a simple card</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </main>
@@ -181,6 +187,25 @@
             max: 10
           }
         }
+      },
+    });
+
+    const ctx3 = document.getElementById("chart3").getContext("2d");
+    const chart3 = new Chart(ctx3, {
+      type: "doughnut",
+      data: {
+        labels: ["응답 비율", "미응답 비율"],
+        datasets: [
+          {
+            label: "순이와의 대화 비율",
+            data: [<%= donutChartData.valueArray %>],
+            backgroundColor: ["#ffa726", "#808080"],
+            hoverOffset: 4,
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
       },
     });
   </script>

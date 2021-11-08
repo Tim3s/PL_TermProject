@@ -23,11 +23,13 @@ app.get("/report", (req, res) => {
         const report = users.getReport(id);
         const pieChartData = users.createPieChartData(report.clusterRatio);
         const barChartData = users.createBarChartData(report.programCnt);
-        console.log(report);
+        const donutChartData = users.createDonutChartData(id);
+        // console.log(report);
         res.render("report", {
             report,
             pieChartData,
             barChartData,
+            donutChartData,
         });
     } else {
         res.render("index", { no_id: true });

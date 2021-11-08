@@ -20,8 +20,10 @@ class Report {
         this.age = age;
         if (sex === "F") {
             this.sex = "여성";
+            this.name = "영희";
         } else {
             this.sex = "남성";
+            this.name = "철수";
         }
 
         if (regularity == null) {
