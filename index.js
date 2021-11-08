@@ -36,7 +36,13 @@ app.get("/report", (req, res) => {
             donutChartData,
         });
     } else {
-        res.render("index", { no_id: true });
+        const totalReport = users.createTotalReport();
+        const pieChartData = users.createPieChartData(totalReport.cluster);
+        res.render("index", {
+            no_id: true,
+            sumUsers: totalReport.sumUsers,
+            pieChartData,
+        });
     }
 });
 
