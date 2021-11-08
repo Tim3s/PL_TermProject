@@ -71,6 +71,13 @@ const createReport = (id, age, sex) => {
     return report;
 };
 
+const createTotalReport = () => {
+    const totalCluster = findUserById(userCluster, 0);
+    const { id, activity, ...ratio } = totalCluster;
+
+    return { cluster: ratio };
+};
+
 const init = async () => {
     await populateData();
     // console.log(userActiveness.length);
@@ -120,6 +127,7 @@ module.exports = {
     init,
     checkIfExists,
     getReport,
+    createTotalReport,
     createPieChartData,
     createBarChartData,
 };

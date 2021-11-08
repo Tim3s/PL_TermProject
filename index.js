@@ -11,11 +11,13 @@ app.set("views", __dirname + "/views");
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.render("index", { no_id: false });
+    const totalReport = users.createTotalReport();
+    const pieChartData = users.createPieChartData(totalReport.cluster);
+    res.render("index", { no_id: false, pieChartData });
 });
 
 app.get("/report", (req, res) => {
-    const id = req.param("id");
+    const id = req.query.id;
     // console.log(id);
     if (users.checkIfExists(id)) {
         const report = users.getReport(id);
