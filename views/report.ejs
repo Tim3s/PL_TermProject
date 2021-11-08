@@ -45,7 +45,7 @@
           <div class="col s12 m6 l4">
             <div class="card large hoverable">
               <div class="card-content">
-                <span class="card-title">생활 점수 <%= report.regularity %>점</span>
+                <span class="card-title">생활 점수 <%= report.regularity %></span>
                 <br />
                 <p><%= report.regularityMessage %></p>
               </div>
@@ -58,14 +58,11 @@
           <div class="col s12 m6 l4">
             <div class="card large hoverable">
               <div class="card-content">
-                <span class="card-title">순이와의 친밀도는 <%= report.friendScore %>점!</span>
+                <span class="card-title">순이와의 친밀도는 <%= report.friendScore %>점</span>
                 <br />
                 <p>123명의 참가자 중 <%= report.friendRank %>등 이시네요!</p>
                 <br />
-                <p id="sooncommand"></p>
-              </div>
-              <div class="card-action">
-                <a href="#">자세히 보기</a>
+                <p><%= report.friendMessage %></p>
               </div>
             </div>
           </div>
@@ -186,13 +183,5 @@
         }
       },
     });
-
-    const sooncommand = document.getElementById("sooncommand");
-    if(<%= report.friendRank %> > 60){
-      sooncommand.innerHTML = "조금 더 순이와 대화를 나눠주세요!";
-    }
-    else{
-      sooncommand.innerHTML = "정말 잘 하고 계세요! 앞으로도 계속 대화를 나눠주세요!";
-    }
   </script>
 </html>
