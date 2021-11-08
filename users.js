@@ -28,6 +28,7 @@ const populateData = async () => {
     userValidness = await getData("overall_validness.csv");
     userRegularity = await getData("regularity.csv");
     userResponse = await getData("response.csv");
+    userProgram = await getData("program.csv");
 };
 
 const findUserById = (array, id) => {
@@ -38,11 +39,19 @@ const createReport = (id, age, sex) => {
     const idRegularity = findUserById(userRegularity, id);
     const idActivness = findUserById(userActiveness, id);
     const idCluster = findUserById(userCluster, id);
+    const idProgram = findUserById(userProgram, id);
     const {
         id: clusterId,
         activity: clusterActivity,
         ...clusterRatio
     } = idCluster;
+    const {
+        id: programId,
+        validness: programValidness,
+        total: programTotal,
+        recommend: programRecommend,
+        ...programCnt
+    } = idProgram;
     const report = new Report(
         id,
         age,
@@ -52,7 +61,11 @@ const createReport = (id, age, sex) => {
         clusterRatio,
         idActivness.age,
         idActivness.score,
-        idActivness.rank
+        idActivness.rank,
+        idActivness.total,
+        programTotal,
+        programRecommend,
+        programCnt
     );
     // console.log(report);
     return report;
@@ -78,18 +91,35 @@ const getReport = (id) => {
     return reports.find((report) => report.id == id);
 };
 
-const createChartData = (object) => {
+const createPieChartData = (object) => {
     const keyArray = [];
     const valueArray = [];
     for (const [key, value] of Object.entries(object)) {
         let refinedValue = (value * 100).toFixed(2);
-        if (refinedValue > 0) {
+        if (refinedValue > 5) {
+            keyArray.push(key);
+            valueArray.push(refinedValue);
+        }
+    }
+    return { keyArray, valueArray };
+};
+
+const createBarChartData = (object) => {
+    const keyArray = [];
+    const valueArray = [];
+    for (const [key, value] of Object.entries(object)) {
+        if (value > 0) {
             keyArray.push(key);
             valueArray.push(value);
         }
     }
-
     return { keyArray, valueArray };
 };
 
-module.exports = { init, checkIfExists, getReport, createChartData };
+module.exports = {
+    init,
+    checkIfExists,
+    getReport,
+    createPieChartData,
+    createBarChartData,
+};
