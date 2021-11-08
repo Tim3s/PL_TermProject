@@ -9,16 +9,16 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <title>Project</title>
   </head>
 
   <body>
     <nav class="orange">
       <div class="nav-wrapper">
-        <a href="#" data-target="slide-out" class="sidenav-trigger">
-          <i class="material-icons">menu</i>
-        </a>
-        <a href="/" class="brand-logo">순이랑</a>
+        <a href="/" class="brand-logo">순이와의 생활분석</a>
         <ul class="right hide-on-med-and-down">
           <li>
             <form method="get" action="/report">
@@ -46,7 +46,6 @@
             <div class="card large hoverable">
               <div class="card-content">
                 <span class="card-title">생활 점수 <%= report.regularity %></span>
-                <br />
                 <p>안녕하세요 나이 <%= report.age %>세 <%= report.name %>님!</p>
                 <p><%= report.regularityMessage %></p>
               </div>
@@ -60,9 +59,7 @@
             <div class="card large hoverable">
               <div class="card-content">
                 <span class="card-title">선호 활동</span>
-                <br />
                 <p>가장 많은 비율을 차지한 활동은 <%= report.clusterActivity %>이에요!</p>
-                <br />
                 <div class="chart-container">
                   <canvas id="chart1"></canvas>
                 </div>
@@ -73,8 +70,7 @@
           <div class="col s12 m6 l4">
             <div class="card large hoverable">
               <div class="card-content">
-                <span class="card-title">활동도</span>
-                <br />
+                <span class="card-title">활동 점수 <%= report.activness %>점</span>
                 <p class="bold"><%= report.name %>님이 속한 나이대는 <%= report.ageRange %>대에요.</p>
                 <p><%= report.name %>님의 활동 점수는 <%= report.activness %>점이에요.</p>
                 <p>비슷한 나이대의 <%= report.activeTotal %>명 중 <%= report.activeRank %>등 하셨어요.</p>
@@ -88,11 +84,8 @@
             <div class="card large hoverable">
               <div class="card-content">
                 <span class="card-title">순이와의 친밀도는 <%= report.friendScore %>점</span>
-                <br />
                 <p>123명의 참가자 중 <%= report.friendRank %>등 이시네요!</p>
-                <br />
                 <p><%= report.friendMessage %></p>
-                <br />
                 <div class="chart-container">
                   <canvas id="chart3"></canvas>
                 </div>
@@ -104,10 +97,8 @@
             <div class="card large hoverable">
               <div class="card-content">
                 <span class="card-title">프로그램 참여</span>
-                <br />
                 <p class="bold">프로그램에 참여한 총 횟수는 <%= report.programTotal %>번 입니다.</p>
                 <p>다음에는 <%= report.programRecom %>에 참여해 보시는것은 어떨까요?</p>
-                <br />
                 <div class="chart-container">
                   <canvas id="chart2"></canvas>
                 </div>
