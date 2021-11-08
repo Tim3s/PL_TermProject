@@ -9,9 +9,9 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet" />
     <title>Project</title>
   </head>
 
@@ -19,7 +19,7 @@
     <nav class="orange">
       <div class="nav-wrapper">
         <a href="/" class="brand-logo">순이와의 생활분석</a>
-        <ul class="right hide-on-med-and-down">
+        <ul class="right" style="margin-right: 40px">
           <li>
             <form method="get" action="/report">
               <div class="input-field">
@@ -28,12 +28,6 @@
                 <i class="material-icons">close</i>
               </div>
             </form>
-          </li>
-          <li>
-            <a href="#">
-              <i class="material-icons left">view_module</i>
-              List Users
-            </a>
           </li>
         </ul>
       </div>
@@ -49,9 +43,6 @@
                 <p>안녕하세요 나이 <%= report.age %>세 <%= report.name %>님!</p>
                 <p><%= report.regularityMessage %></p>
               </div>
-              <!-- <div class="card-action">
-                <a href="#">자세히 보기</a>
-              </div> -->
             </div>
           </div>
 
@@ -105,18 +96,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="col s12 m6">
-            <div class="card large hoverable">
-              <div class="card-image">
-                <img src="/background.jpg" />
-                <span class="card-title">My Blog</span>
-              </div>
-              <div class="card-content">
-                <p>It's a simple card</p>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </main>
