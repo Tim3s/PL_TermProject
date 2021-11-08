@@ -11,7 +11,8 @@ class Report {
         activeRank,
         activeTotal,
         programTotal,
-        programRecom
+        programRecom,
+        programCnt
     ) {
         this.id = id;
         this.age = age;
@@ -35,6 +36,7 @@ class Report {
         this.activeTotal = activeTotal;
         this.programTotal = programTotal;
         this.programRecom = programRecom;
+        this.programCnt = programCnt;
     }
 }
 

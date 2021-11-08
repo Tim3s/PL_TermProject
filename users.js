@@ -45,6 +45,13 @@ const createReport = (id, age, sex) => {
         activity: clusterActivity,
         ...clusterRatio
     } = idCluster;
+    const {
+        id: programId,
+        validness: programValidness,
+        total: programTotal,
+        recommend: programRecommend,
+        ...programCnt
+    } = idProgram;
     const report = new Report(
         id,
         age,
@@ -56,8 +63,9 @@ const createReport = (id, age, sex) => {
         idActivness.score,
         idActivness.rank,
         idActivness.total,
-        idProgram.total,
-        idProgram.recommend
+        programTotal,
+        programRecommend,
+        programCnt
     );
     // console.log(report);
     return report;
@@ -83,18 +91,35 @@ const getReport = (id) => {
     return reports.find((report) => report.id == id);
 };
 
-const createChartData = (object) => {
+const createPieChartData = (object) => {
     const keyArray = [];
     const valueArray = [];
     for (const [key, value] of Object.entries(object)) {
         let refinedValue = (value * 100).toFixed(2);
-        if (refinedValue > 0) {
+        if (refinedValue > 5) {
+            keyArray.push(key);
+            valueArray.push(refinedValue);
+        }
+    }
+    return { keyArray, valueArray };
+};
+
+const createBarChartData = (object) => {
+    const keyArray = [];
+    const valueArray = [];
+    for (const [key, value] of Object.entries(object)) {
+        if (value > 0) {
             keyArray.push(key);
             valueArray.push(value);
         }
     }
-
     return { keyArray, valueArray };
 };
 
-module.exports = { init, checkIfExists, getReport, createChartData };
+module.exports = {
+    init,
+    checkIfExists,
+    getReport,
+    createPieChartData,
+    createBarChartData,
+};

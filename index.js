@@ -19,11 +19,13 @@ app.get("/report", (req, res) => {
     // console.log(id);
     if (users.checkIfExists(id)) {
         const report = users.getReport(id);
-        const chartData = users.createChartData(report.clusterRatio);
+        const pieChartData = users.createPieChartData(report.clusterRatio);
+        const barChartData = users.createBarChartData(report.programCnt);
         console.log(report);
         res.render("report", {
             report,
-            chartData,
+            pieChartData,
+            barChartData,
         });
     } else {
         res.render("index", { no_id: true });
