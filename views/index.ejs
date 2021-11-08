@@ -85,7 +85,10 @@
               <div class="card-content">
                 <span class="card-title">전체 사용자의 순이와의 대화 통계</span>
                 <p><%= sumUsers %>명의 사용자들이 순이와의 대화에 총 <%= totalResponse %>번 참여했습니다.</p>
-                <p>전체 사용자의 대화 응답 비율은 <%= totalResratio %>입니다</p>
+                <p>전체 사용자의 대화 응답 비율은 <%= totalResratio %>%입니다.</p>
+                <div class="chart-container">
+                  <canvas id="chart3"></canvas>
+                </div>
               </div>
             </div>
           </div>
@@ -167,6 +170,25 @@
             max: 500
           }
         }
+      },
+    });
+
+    const ctx3 = document.getElementById("chart3").getContext("2d");
+    const chart3 = new Chart(ctx3, {
+      type: "doughnut",
+      data: {
+        labels: ["응답 비율", "미응답 비율"],
+        datasets: [
+          {
+            label: "순이와의 대화 비율",
+            data: [<%= totalResratio %>, 100 - <%= totalResratio %>],
+            backgroundColor: ["#ffa726", "#808080"],
+            hoverOffset: 4,
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
       },
     });
   </script>
