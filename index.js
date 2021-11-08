@@ -13,7 +13,11 @@ app.use(express.json());
 app.get("/", (req, res) => {
     const totalReport = users.createTotalReport();
     const pieChartData = users.createPieChartData(totalReport.cluster);
-    res.render("index", { no_id: false, pieChartData });
+    res.render("index", {
+        no_id: false,
+        sumUsers: totalReport.sumUsers,
+        pieChartData,
+    });
 });
 
 app.get("/report", (req, res) => {
