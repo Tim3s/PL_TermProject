@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/report", (req, res) => {
-    const id = req.param("id");
+    const id = req.query.id;
     // console.log(id);
     if (users.checkIfExists(id)) {
         const report = users.getReport(id);
