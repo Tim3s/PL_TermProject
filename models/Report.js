@@ -12,7 +12,9 @@ class Report {
         activeTotal,
         programTotal,
         programRecom,
-        programCnt
+        programCnt,
+        friendScore,
+        friendRank
     ) {
         this.id = id;
         this.age = age;
@@ -48,6 +50,8 @@ class Report {
         this.programTotal = programTotal;
         this.programRecom = programRecom;
         this.programCnt = programCnt;
+        this.friendScore = Math.ceil(friendScore);
+        this.friendRank = friendRank;
     }
 }
 
