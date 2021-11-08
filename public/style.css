@@ -1,5 +1,5 @@
-nav{
-    font-family: 'Nanum Pen Script', cursive;
+nav {
+    font-family: "Nanum Pen Script", cursive;
     font-size: x-large;
 }
 nav,
@@ -11,10 +11,16 @@ footer {
 
 main {
     padding: 20px 30px 20px 30px;
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: bold;
 }
 
-.card-title {
-    font-size: xx-large;
+h4 {
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .chart-container {

@@ -7,11 +7,12 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!--Import materialize.css-->
-    <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
     <title>Project</title>
   </head>
 
@@ -39,26 +40,21 @@
         <div class="row">
           <div class="col s12 m6 l6">
             <div class="card medium hoverable">
-              <span class="card-title">
-                <img style="margin: 20px 0 0 20px" src="/soony.png" width="50" height="50" />
-                순이와의 생활분석은...
-              </span>
-              <!-- <span class="card-title black-text">순이랑은...</span> -->
               <div class="card-content">
+                <h4>
+                  <img src="/soony.png" width="50" height="50" />
+                  순이와의 생활분석은...
+                </h4>
                 <br />
-                <p><%= sumUsers %>명의 사용자들을 위한 개인 맞춤 생활 리포트 제작 서비스입니다.</p>
+                <p class="flow-text"><%= sumUsers %>명의 사용자들을 위한 개인 맞춤 생활 리포트 제작 서비스입니다.</p>
               </div>
-              <!-- <div class="card-action">
-                <a href="#">자세히 보기</a>
-              </div> -->
             </div>
           </div>
 
           <div class="col s12 m6 l6">
             <div class="card medium hoverable">
               <div class="card-content">
-                <span class="card-title">전체 사용자 활동 비율</span>
-                <br />
+                <h4>전체 사용자 활동 비율</h4>
                 <div class="chart-container">
                   <canvas id="chart1"></canvas>
                 </div>
@@ -71,8 +67,7 @@
           <div class="col s12 m6">
             <div class="card large hoverable">
               <div class="card-content">
-                <span class="card-title">전체 사용자의 순이와의 대화 통계</span>
-                <br />
+                <h4>전체 사용자의 순이와의 대화 통계</h4>
                 <p><%= sumUsers %>명의 사용자들이 순이와의 대화에 총 <%= totalResponse %>번 참여했습니다.</p>
                 <br />
                 <p>전체 사용자의 대화 응답 비율은 <%= totalResratio %>%입니다.</p>
@@ -87,7 +82,7 @@
           <div class="col s12 m6">
             <div class="card large hoverable">
               <div class="card-content">
-                <span class="card-title">순이 프로그램 참여도</span>
+                <h4>순이 프로그램 참여도</h4>
                 <br />
                 <div class="chart-container">
                   <canvas id="chart2"></canvas>
