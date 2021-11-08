@@ -7,8 +7,8 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!--Import materialize.css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <title>Project</title>
   </head>
 
@@ -38,50 +38,6 @@
         </ul>
       </div>
     </nav>
-    <ul id="slide-out" class="sidenav sidenav-fixed">
-      <li>
-        <div class="user-view">
-          <div class="background">
-            <img src="/background.jpg" />
-          </div>
-          <a href="#"><img class="circle" src="/sample.jpg" /></a>
-          <a href="#"><span class="black-text name">John Doe</span></a>
-          <a href="#"><span class="black-text name">Age: <%= report.age %></span></a>
-          <a href="#"><span class="black-text name">Sex: <%= report.sex %></span></a>
-        </div>
-      </li>
-      <li>
-        <a href="#" class="wave-effect"><i class="material-icons">description</i>Reports</a>
-      </li>
-      <li><div class="divider"></div></li>
-      <li>
-        <a href="#" class="subheader">Menu</a>
-      </li>
-      <!-- <li><a href="#">Learn More</a></li> -->
-      <li class="no-padding">
-        <ul class="collapsible collapsible-accordian">
-          <li class="bold">
-            <a href="#" class="collapsible-header">Search User</a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#">By Id</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="bold">
-            <a href="#" class="collapsible-header">List Users</a>
-            <div class="collapsible-body">
-              <ul>
-                <li><a href="#">Total</a></li>
-                <li><a href="#">Monthly</a></li>
-                <li><a href="#">Weekly</a></li>
-                <li><a href="#">Daily</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </li>
-    </ul>
 
     <main>
       <div class="container-main">
@@ -91,9 +47,7 @@
               <div class="card-content">
                 <span class="card-title">생활 점수 <%= report.regularity %>점</span>
                 <br />
-                <p>주로 <%= report.clusterActivity %>을 하시는군요!</p>
-                <br />
-                <p>다른 활동을 해보시는건 어떨까요?</p>
+                <p><%= report.regularityMessage %></p>
               </div>
               <div class="card-action">
                 <a href="#">자세히 보기</a>
