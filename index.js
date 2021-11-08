@@ -13,10 +13,12 @@ app.use(express.json());
 app.get("/", (req, res) => {
     const totalReport = users.createTotalReport();
     const pieChartData = users.createPieChartData(totalReport.cluster);
+    const barChartData = users.createBarChartData(totalReport.program);
     res.render("index", {
         no_id: false,
         sumUsers: totalReport.sumUsers,
         pieChartData,
+        barChartData,
     });
 });
 
