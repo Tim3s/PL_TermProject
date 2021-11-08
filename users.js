@@ -89,7 +89,20 @@ const createTotalReport = () => {
         ...programFreq
     } = totalProgram[0];
 
-    return { sumUsers, cluster: ratio, program: programFreq };
+    var totalResponse = 0;
+    var totalRequest = 0;
+    for(var i = 0; i < reports.length; i++){
+        if(userResponse[i]["validness"] == 0)continue;
+        totalResponse += parseInt(userResponse[i]["response1"]);
+        totalResponse += parseInt(userResponse[i]["response2"]);
+        totalResponse += parseInt(userResponse[i]["response3"]);
+        totalRequest += parseInt(userResponse[i]["total1"]);
+        totalRequest += parseInt(userResponse[i]["total2"]);
+        totalRequest += parseInt(userResponse[i]["total3"]);
+    }
+    const totalResratio = ((totalResponse / totalRequest) * 100).toFixed(2);
+    return { sumUsers, cluster: ratio, program: programFreq, totalResponse, totalResratio };
+
 };
 
 const init = async () => {
