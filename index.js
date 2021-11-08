@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
         sumUsers: totalReport.sumUsers,
         pieChartData,
         barChartData,
+        totalResponse: totalReport.totalResponse
     });
 });
 
@@ -40,10 +41,13 @@ app.get("/report", (req, res) => {
     } else {
         const totalReport = users.createTotalReport();
         const pieChartData = users.createPieChartData(totalReport.cluster);
+        const barChartData = users.createBarChartData(totalReport.program);
         res.render("index", {
             no_id: true,
             sumUsers: totalReport.sumUsers,
             pieChartData,
+            barChartData,
+            totalResponse: totalReport.totalResponse
         });
     }
 });

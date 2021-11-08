@@ -97,7 +97,7 @@ const createTotalReport = () => {
         totalResponse += parseInt(userResponse[i]["response3"]);
     }
     console.log(totalResponse);
-    return { sumUsers, cluster: ratio, program: programFreq };
+    return { sumUsers, cluster: ratio, program: programFreq, totalResponse };
 
 };
 
