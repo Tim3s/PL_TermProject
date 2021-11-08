@@ -80,6 +80,14 @@ const createTotalReport = () => {
     const { id, activity, ...ratio } = totalCluster;
     const sumUsers = reports.length;
 
+    var totalResponse = 0;
+    for(var i = 0; i < reports.length; i++){
+        if(userResponse[i]["validness"] == 0)continue;
+        totalResponse += parseInt(userResponse[i]["response1"]);
+        totalResponse += parseInt(userResponse[i]["response2"]);
+        totalResponse += parseInt(userResponse[i]["response3"]);
+    }
+    console.log(totalResponse);
     return { sumUsers, cluster: ratio };
 };
 
