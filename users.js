@@ -8,7 +8,10 @@ let userProfile,
     userCluster,
     userValidness,
     userRegularity,
-    userResponse;
+    userResponse,
+    userProgram,
+    userFriend,
+    totalProgram;
 const reports = [];
 
 const getData = async (filename) => {
@@ -30,6 +33,7 @@ const populateData = async () => {
     userResponse = await getData("response.csv");
     userProgram = await getData("program.csv");
     userFriend = await getData("friendship.csv");
+    totalProgram = await getData("programTotal.csv");
 };
 
 const findUserById = (array, id) => {
@@ -79,8 +83,13 @@ const createTotalReport = () => {
     const totalCluster = findUserById(userCluster, 0);
     const { id, activity, ...ratio } = totalCluster;
     const sumUsers = reports.length;
+    const {
+        id: programId,
+        total: programTotal,
+        ...programFreq
+    } = totalProgram[0];
 
-    return { sumUsers, cluster: ratio };
+    return { sumUsers, cluster: ratio, program: programFreq };
 };
 
 const init = async () => {
