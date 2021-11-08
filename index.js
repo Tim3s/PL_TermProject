@@ -40,17 +40,9 @@ app.get("/report", (req, res) => {
             donutChartData,
         });
     } else {
-        const totalReport = users.createTotalReport();
-        const pieChartData = users.createPieChartData(totalReport.cluster);
-        const barChartData = users.createBarChartData(totalReport.program);
-        res.render("index", {
-            no_id: true,
-            sumUsers: totalReport.sumUsers,
-            pieChartData,
-            barChartData,
-            totalResponse: totalReport.totalResponse,
-            totalResratio: totalReport.totalResratio
-        });
+        res.send(
+            "<script>alert('존재하지 않는 사용자입니다!'); document.location.href = '/';</script>"
+        );
     }
 });
 

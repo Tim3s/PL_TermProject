@@ -9,9 +9,9 @@
     <!--Import materialize.css-->
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet" />
     <title>Project</title>
   </head>
 
@@ -52,8 +52,8 @@
           <div class="col s12 m6 l6">
             <div class="card medium hoverable">
               <span class="card-title">
-                <img src="/soony.png" width="50" height="50" />
-                순이랑은...
+                <img style="margin: 20px 0 0 20px" src="/soony.png" width="50" height="50" />
+                순이와의 생활분석은...
               </span>
               <!-- <span class="card-title black-text">순이랑은...</span> -->
               <div class="card-content">
@@ -121,11 +121,6 @@
       const collapsible = document.querySelectorAll(".collapsible");
       const collapsibleInstance = M.Collapsible.init(collapsible);
     });
-
-    if(<%= no_id %> == true){
-      alert('존재하지 않거나 데이터가 부족한 사용자 id 입니다');
-      document.location.href = '/';
-    }
 
     const ctx1 = document.getElementById("chart1").getContext("2d");
     const chart1 = new Chart(ctx1, {
