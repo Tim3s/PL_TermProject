@@ -20,7 +20,7 @@ $ npm run start
 
 -   http://localhost:3000
 
-## Project Structue
+## Project Structure
 
 ```bash
 root

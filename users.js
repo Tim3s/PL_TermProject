@@ -75,7 +75,6 @@ const createReport = (id, age, sex) => {
         idFriend.score,
         idFriend.rank
     );
-    // console.log(report);
     return report;
 };
 
@@ -91,8 +90,8 @@ const createTotalReport = () => {
 
     var totalResponse = 0;
     var totalRequest = 0;
-    for(var i = 0; i < reports.length; i++){
-        if(userResponse[i]["validness"] == 0)continue;
+    for (var i = 0; i < reports.length; i++) {
+        if (userResponse[i]["validness"] == 0) continue;
         totalResponse += parseInt(userResponse[i]["response1"]);
         totalResponse += parseInt(userResponse[i]["response2"]);
         totalResponse += parseInt(userResponse[i]["response3"]);
@@ -101,19 +100,22 @@ const createTotalReport = () => {
         totalRequest += parseInt(userResponse[i]["total3"]);
     }
     const totalResratio = ((totalResponse / totalRequest) * 100).toFixed(2);
-    return { sumUsers, cluster: ratio, program: programFreq, totalResponse, totalResratio };
-
+    return {
+        sumUsers,
+        cluster: ratio,
+        program: programFreq,
+        totalResponse,
+        totalResratio,
+    };
 };
 
 const init = async () => {
     await populateData();
-    // console.log(userActiveness.length);
     userProfile.forEach((user) => {
         if (userValidness.find((u) => u.id == user.id).validness === "valid") {
             reports.push(createReport(user.id, user.age, user.sex));
         }
     });
-    // console.log(reports.length);
 };
 
 const checkIfExists = (id) => {

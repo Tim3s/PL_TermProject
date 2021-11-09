@@ -20,19 +20,17 @@ app.get("/", (req, res) => {
         pieChartData,
         barChartData,
         totalResponse: totalReport.totalResponse,
-        totalResratio: totalReport.totalResratio
+        totalResratio: totalReport.totalResratio,
     });
 });
 
 app.get("/report", (req, res) => {
     const id = req.query.id;
-    // console.log(id);
     if (users.checkIfExists(id)) {
         const report = users.getReport(id);
         const pieChartData = users.createPieChartData(report.clusterRatio);
         const barChartData = users.createBarChartData(report.programCnt);
         const donutChartData = users.createDonutChartData(id);
-        // console.log(report);
         res.render("report", {
             report,
             pieChartData,
