@@ -1,6 +1,10 @@
 # 순이와의 생활분석
 
-## How to Start
+## Application Deployed
+
+-   https://pl-soony.herokuapp.com/
+
+## How to Start Locally
 
 ### Install Dependencies
 
