@@ -118,17 +118,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const dropdown = document.querySelectorAll(".dropdown-trigger");
-      const dropdownInstance = M.Dropdown.init(dropdown);
-
-      const sidenav = document.querySelectorAll(".sidenav");
-      const sidenavInstance = M.Sidenav.init(sidenav);
-
-      const collapsible = document.querySelectorAll(".collapsible");
-      const collapsibleInstance = M.Collapsible.init(collapsible);
-    });
-
     const ctx1 = document.getElementById("chart1").getContext("2d");
     const chart1 = new Chart(ctx1, {
       type: "pie",
