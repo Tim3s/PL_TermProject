@@ -1,0 +1,4 @@
+[submodule "PL-teamproject-dataprocessing"]
+	path = PL-teamproject-dataprocessing
+	url = git@github.com:Tim3s/PL-teamproject-dataprocessing
+	branch = main
